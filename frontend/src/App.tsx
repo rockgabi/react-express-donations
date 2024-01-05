@@ -22,7 +22,7 @@ function App() {
                   </a>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <a className={navigationMenuTriggerStyle()} href="/">
+                  <a className={navigationMenuTriggerStyle()} href="/gallery">
                     Gallery
                   </a>
                 </NavigationMenuLink>
