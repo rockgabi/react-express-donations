@@ -14,11 +14,12 @@ import Landing from "./pages/Landing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="gallery" element={<Gallery />} />
-      <Route path="/" element={<Landing />} />
-      {/* ... etc. */}
-    </Route>
+    <>
+      <Route path="/" element={<Landing />}></Route>
+      <Route path="/gallery" element={<App />}>
+        <Route path="" element={<Gallery />} />
+      </Route>
+    </>
   )
 );
 

@@ -6,10 +6,11 @@ import { Switch } from '@/components/ui/switch';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function Gallery() {
   return (
-    <div className="flex rounded-[0.5rem] border bg-background shadow-md md:shadow-xl">
+    <div className="flex rounded-[0.5rem] border bg-background shadow-md md:shadow-xl h-full">
       <section className="flex flex-col gap-4 p-4">
         <div className="flex items-center space-x-2">
           <Switch id="featured" checked />
@@ -25,18 +26,24 @@ export default function Gallery() {
         </div>
       </section>
       <Separator orientation="vertical" className="h-auto" />
-      <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel className="" defaultSize={75}>
+      <ResizablePanelGroup direction="horizontal" className="h-full">
+        <ResizablePanel className="h-full" defaultSize={75}>
           <div className="flex py-2 px-4">
             <Input type="search" placeholder="Search" className="w-full" />
           </div>
           <Separator orientation="horizontal" className="" />
-          <div className="flex flex-row flex-wrap gap-4 p-4">
-            <GalleryItem />
-            <GalleryItem />
-            <GalleryItem />
-            <GalleryItem />
-          </div>
+          <ScrollArea className="h-full">
+            <div className="flex flex-row flex-wrap gap-4 p-4">
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+              <GalleryItem />
+            </div>
+          </ScrollArea>
         </ResizablePanel>
         <ResizableHandle withHandle className="" />
         <ResizablePanel className="flex flex-col" defaultSize={25}>
