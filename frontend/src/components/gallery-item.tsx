@@ -1,19 +1,19 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { cn } from '@/lib/utils';
-import { BellRing, Check, CircleDashed, ZoomIn } from 'lucide-react';
+import { CircleDashed, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export default function GalleryItem() {
   return (
-    <Card className={cn('flex-1 min-w-[320px]')}>
+    <Card className={cn('whitespace-wrap min-w-[260px] basis-1/3 flex-grow')}>
       <CardHeader>
         <CardTitle>Organization ABC</CardTitle>
         <CardDescription>We want to end global warming</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Badge>Featured</Badge>
           <Badge>Nature</Badge>
           <Badge>Worldwide</Badge>
