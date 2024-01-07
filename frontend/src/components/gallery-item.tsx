@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { CircleDashed, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
 
 export default function GalleryItem() {
   return (
@@ -23,6 +24,7 @@ export default function GalleryItem() {
           <div className="flex-1 space-y-1">
             <p className="text-sm font-medium leading-none">Campaign XYZ</p>
             <p className="text-sm text-muted-foreground">Raising funds for the new building</p>
+            <Progress value={50} />
           </div>
         </div>
         <div>

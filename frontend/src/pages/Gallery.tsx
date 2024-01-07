@@ -6,7 +6,8 @@ import { Switch } from '@/components/ui/switch';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Progress } from '@/components/ui/progress';
 
 export default function Gallery() {
   return (
@@ -54,8 +55,9 @@ export default function Gallery() {
             </Button>
           </div>
           <Separator orientation="horizontal" className="" />
-          <div className="flex flex-col p-4 pt-6 space-y-1.5">
+          <div className="flex flex-col p-4 pt-6 space-y-3">
             <h3 className="text-2xl font-semibold leading-none tracking-tight">Campaign XYZ</h3>
+            <Progress value={50} />
             <p className="text-sm text-muted-foreground">
               Our mission is to end global warming, and we need your help. To accomplish this, we need to build a new
               building.
