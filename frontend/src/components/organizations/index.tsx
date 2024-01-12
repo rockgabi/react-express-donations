@@ -5,7 +5,7 @@ import Update from './update';
 
 export default function Organizations() {
   return (
-    <div className="p-4">
+    <div className="w-full p-4">
       <Outlet />
     </div>
   );

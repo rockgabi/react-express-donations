@@ -25,9 +25,8 @@ export default function Admin() {
         <Nav links={links} isCollapsed={false} />
       </section>
       <Separator orientation="vertical" className="h-auto" />
-      <div>
-        <Outlet />
-      </div>
+
+      <Outlet />
     </div>
   );
 }

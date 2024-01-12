@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}>
         <Route path="gallery" element={<Gallery />} />
         <Route path="admin" element={<Admin />}>
-          <Route path="" element={<Organizations />}>
+          <Route path="organizations" element={<Organizations />}>
             <Route path="" element={<List />} />
             <Route path="new" element={<Create />} />
             <Route path=":id" element={<Update />} />

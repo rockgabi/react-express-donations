@@ -17,6 +17,7 @@ Tech stack is:
 - Organizations
   - name
   - description
+  - website
   - tags
 
 - Tags
