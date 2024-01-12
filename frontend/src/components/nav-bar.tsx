@@ -21,6 +21,11 @@ export default function NavBar() {
               Gallery
             </a>
           </NavigationMenuLink>
+          <NavigationMenuLink asChild>
+            <a className={navigationMenuTriggerStyle()} href="/admin">
+              Admin
+            </a>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

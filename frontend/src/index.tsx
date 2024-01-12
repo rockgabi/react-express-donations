@@ -3,29 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import Gallery from "./pages/Gallery";
-import Landing from "./pages/Landing";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import Gallery from './pages/Gallery';
+import Landing from './pages/Landing';
+import Admin from './pages/Admin';
+import Organizations from './components/organizations';
+import Campaings from './components/campaigns';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Landing />}></Route>
-      <Route path="/gallery" element={<App />}>
-        <Route path="" element={<Gallery />} />
+      <Route path="/" element={<App />}>
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="admin" element={<Admin />}>
+          <Route path="organizations" element={<Organizations />} />
+          <Route path="campaigns" element={<Campaings />} />
+        </Route>
       </Route>
     </>
   )
 );
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
