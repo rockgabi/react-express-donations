@@ -6,12 +6,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
 import { Button } from '../ui/button';
 import { MoreHorizontal } from 'lucide-react';
 import { Badge } from '../ui/badge';
+import { Link } from 'react-router-dom';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -39,7 +39,7 @@ export const columns: ColumnDef<Organization>[] = [
       return (
         <div className="flex gap-2 flex-wrap">
           {tags.map((tag) => (
-            <Badge>{tag}</Badge>
+            <Badge key={tag}>{tag}</Badge>
           ))}
         </div>
       );
@@ -48,7 +48,7 @@ export const columns: ColumnDef<Organization>[] = [
   {
     id: 'actions',
     cell: ({ row }) => {
-      const payment = row.original;
+      // const payment = row.original;
 
       return (
         <DropdownMenu>
@@ -60,7 +60,9 @@ export const columns: ColumnDef<Organization>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem>Edit</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link to={row.id}>Edit</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

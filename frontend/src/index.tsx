@@ -7,7 +7,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Gallery from './pages/Gallery';
 import Landing from './pages/Landing';
 import Admin from './pages/Admin';
-import Organizations from './components/organizations';
+import Organizations, { Create, Update, List } from './components/organizations';
 import Campaings from './components/campaigns';
 
 const router = createBrowserRouter(
@@ -17,7 +17,11 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}>
         <Route path="gallery" element={<Gallery />} />
         <Route path="admin" element={<Admin />}>
-          <Route path="organizations" element={<Organizations />} />
+          <Route path="" element={<Organizations />}>
+            <Route path="" element={<List />} />
+            <Route path="new" element={<Create />} />
+            <Route path=":id" element={<Update />} />
+          </Route>
           <Route path="campaigns" element={<Campaings />} />
         </Route>
       </Route>

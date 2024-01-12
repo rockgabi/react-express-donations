@@ -13,3 +13,22 @@ Tech stack is:
 
 ## Steps to use Typescript With Node + Execute the project
 
+## Data Models
+- Organizations
+  - name
+  - description
+  - tags
+
+- Tags
+  - label
+  - name
+
+- Campaigns
+  - organization
+  - name
+  - description
+  - goal
+
+- Donation
+  - campaign
+  - amount
