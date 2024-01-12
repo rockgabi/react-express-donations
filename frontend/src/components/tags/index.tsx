@@ -11,11 +11,11 @@ function Layout() {
   );
 }
 
-const Organizations = {
+const Tags = {
   Layout,
   List,
   Create,
   Update,
 };
 
-export default Organizations;
+export default Tags;

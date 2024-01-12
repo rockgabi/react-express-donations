@@ -7,8 +7,9 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Gallery from './pages/Gallery';
 import Landing from './pages/Landing';
 import Admin from './pages/Admin';
-import Organizations, { Create, Update, List } from './components/organizations';
+import Organizations from './components/organizations';
 import Campaings from './components/campaigns';
+import Tags from './components/tags';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,12 +18,17 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}>
         <Route path="gallery" element={<Gallery />} />
         <Route path="admin" element={<Admin />}>
-          <Route path="organizations" element={<Organizations />}>
-            <Route path="" element={<List />} />
-            <Route path="new" element={<Create />} />
-            <Route path=":id" element={<Update />} />
+          <Route path="organizations" element={<Organizations.Layout />}>
+            <Route path="" element={<Organizations.List />} />
+            <Route path="new" element={<Organizations.Create />} />
+            <Route path=":id" element={<Organizations.Update />} />
           </Route>
           <Route path="campaigns" element={<Campaings />} />
+          <Route path="tags" element={<Tags.Layout />}>
+            <Route path="" element={<Tags.List />} />
+            <Route path="new" element={<Tags.Create />} />
+            <Route path=":id" element={<Tags.Update />} />
+          </Route>
         </Route>
       </Route>
     </>

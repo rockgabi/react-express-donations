@@ -1,6 +1,6 @@
 import { Nav, NavLinkDef } from '@/components/admin/nav';
 import { Separator } from '@/components/ui/separator';
-import { Building2, Coins } from 'lucide-react';
+import { Building2, Coins, Tag } from 'lucide-react';
 import { Outlet } from 'react-router-dom';
 
 const links: NavLinkDef[] = [
@@ -14,6 +14,12 @@ const links: NavLinkDef[] = [
     title: 'Campaigns',
     icon: Coins,
     href: '/admin/campaigns',
+    variant: 'default',
+  },
+  {
+    title: 'Tags',
+    icon: Tag,
+    href: '/admin/tags',
     variant: 'default',
   },
 ];
