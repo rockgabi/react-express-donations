@@ -5,6 +5,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   return (
@@ -12,19 +13,19 @@ export default function NavBar() {
       <NavigationMenuList>
         <NavigationMenuItem className="flex gap-2">
           <NavigationMenuLink asChild>
-            <a className={navigationMenuTriggerStyle()} href="/">
+            <Link className={navigationMenuTriggerStyle()} to="/">
               Landing
-            </a>
+            </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <a className={navigationMenuTriggerStyle()} href="/gallery">
+            <Link className={navigationMenuTriggerStyle()} to="/gallery">
               Gallery
-            </a>
+            </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <a className={navigationMenuTriggerStyle()} href="/admin">
+            <Link className={navigationMenuTriggerStyle()} to="/admin">
               Admin
-            </a>
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
