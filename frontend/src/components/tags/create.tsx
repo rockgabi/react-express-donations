@@ -8,16 +8,13 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '../ui/text-area';
 
 export default function Create() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      description: '',
-      website: '',
-      tags: [],
+      label: '',
     },
   });
 
@@ -38,9 +35,9 @@ export default function Create() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Organization ABC" {...field} />
+                  <Input placeholder="Nature" {...field} />
                 </FormControl>
-                <FormDescription>The name of the organization</FormDescription>
+                <FormDescription>The name of the tag</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -48,29 +45,14 @@ export default function Create() {
 
           <FormField
             control={form.control}
-            name="website"
+            name="label"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Website</FormLabel>
+                <FormLabel>Label</FormLabel>
                 <FormControl>
-                  <Input placeholder="https://organization-abc.com" {...field} />
+                  <Input placeholder="nature" {...field} />
                 </FormControl>
-                <FormDescription>The website of the organization</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="description"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Description</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="We are an organization dedicated to..." {...field} />
-                </FormControl>
-                <FormDescription>The description of the organization</FormDescription>
+                <FormDescription>The label of the tag</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
