@@ -23,7 +23,11 @@ const router = createBrowserRouter(
             <Route path="new" element={<Organizations.Create />} />
             <Route path=":id" element={<Organizations.Update />} />
           </Route>
-          <Route path="campaigns" element={<Campaings />} />
+          <Route path="campaigns" element={<Campaings.Layout />}>
+            <Route path="" element={<Campaings.List />} />
+            <Route path="new" element={<Campaings.Create />} />
+            <Route path=":id" element={<Campaings.Update />} />
+          </Route>
           <Route path="tags" element={<Tags.Layout />}>
             <Route path="" element={<Tags.List />} />
             <Route path="new" element={<Tags.Create />} />
