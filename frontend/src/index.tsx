@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from 'react-router-dom';
 import Gallery from './pages/Gallery';
 import Landing from './pages/Landing';
 import Admin from './pages/Admin';
@@ -17,6 +17,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Landing />}></Route>
       <Route path="/" element={<App />}>
         <Route path="gallery" element={<Gallery />} />
+        <Route path="admin" element={<Navigate to="organizations" />} />
         <Route path="admin" element={<Admin />}>
           <Route path="organizations" element={<Organizations.Layout />}>
             <Route path="" element={<Organizations.List />} />

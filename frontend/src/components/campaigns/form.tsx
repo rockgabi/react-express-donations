@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '../ui/text-area';
+import ComboboxFormField from '../ui/react-hook-form/combobox';
 
 interface Props {
   onSubmit: (values: z.infer<typeof formSchema>) => void;
@@ -57,6 +58,29 @@ export default function Form(props: Props) {
 
         <FormField
           control={form.control}
+          name="organizationId"
+          render={({ field }) => (
+            <div className="space-y-2">
+              <FormLabel>Organization</FormLabel>
+              <ComboboxFormField
+                data={[
+                  { label: 'Organization 1', value: '1' },
+                  { label: 'Organization 2', value: '2' },
+                  { label: 'Organization 3', value: '3' },
+                ]}
+                placeholder="Select Organization"
+                {...field}
+                value={field.value?.toString()}
+                onChange={(v) => field.onChange(parseInt(v))}
+              />
+              <FormDescription>The organization this campaign is attached</FormDescription>
+              <FormMessage />
+            </div>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="description"
           render={({ field }) => (
             <FormItem>
@@ -77,7 +101,11 @@ export default function Form(props: Props) {
             <FormItem>
               <FormLabel>Raising Goal</FormLabel>
               <FormControl>
-                <Input placeholder="9999.99" {...field} type="number" />
+                <Input
+                  placeholder="9999.99"
+                  onChange={(v) => field.onChange(parseFloat(v.currentTarget.value))}
+                  type="number"
+                />
               </FormControl>
               <FormDescription>The raising goal for this campaign</FormDescription>
               <FormMessage />
